@@ -23,7 +23,6 @@ export class Checkout {
     const smallestPrice = Math.min(justNumbers);
     const smallestPriceIndex = justNumbers.indexOf(smallestPrice);
     const specificRemoveButton = this.basketItemRemoveButton.nth(smallestPriceIndex);
-
     await specificRemoveButton.waitFor();
     await specificRemoveButton.click();
     await expect(this.basketCards).toHaveCount(itemsBeforeRemoval - 1);
